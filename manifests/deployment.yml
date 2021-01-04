@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: vknyshdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vknyshdocker
+  template:
+    metadata:
+      labels:
+        app: vknyshdocker 
+    spec:
+      containers:
+        - name: vknyshdocker 
+          image: vknysh79one.azurecr.io/vknyshdocker
+          ports:
+          - containerPort: 80
