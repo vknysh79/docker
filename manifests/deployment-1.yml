@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "k8s4php-da6e"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "k8s4php-da6e"
+  template:
+    metadata:
+      labels:
+        app: "k8s4php-da6e"
+    spec:
+      containers:
+        - name: "k8s4php-da6e"
+          image: "vknysh79one.azurecr.io/k8s4php"
+          ports:
+          - containerPort: 80

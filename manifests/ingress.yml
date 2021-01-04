@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "k8s4php-da6e"
+    labels:
+        app: "k8s4php-da6e"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: k8s4php9759-k8s4php-da6e.ef9089b0dcfb42909c57.westeurope.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "k8s4php-da6e"
+                servicePort: 80
