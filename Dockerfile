@@ -1,8 +1,5 @@
-FROM centos
-RUN yum update -y && \
-    yum install httpd -y  &&\
-    yum install php -y
-COPY ./index.php /var/www/html/index.php
-CMD [ "/usr/sbin/httpd", "-D" , "FOREGROUND" ]
-EXPOSE 80
-
+FROM tomcat:8.0-alpine
+LABEL maintainer=”deepak@softwareyoga.com”
+ADD sample.war /usr/local/tomcat/webapps/
+EXPOSE 8080
+CMD [“catalina.sh”, “run”]
