@@ -1,4 +1,6 @@
-<?php 
-$ip_server = $_SERVER['SERVER_ADDR'];
-echo "my ip is $ip_server"
+<?php
+
+// Show all information, defaults to INFO_ALL
+phpinfo();
+
 ?>
